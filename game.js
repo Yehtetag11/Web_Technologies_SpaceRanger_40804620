@@ -400,7 +400,7 @@ if (canvas) {
     const asteroidImages = [];
     ["asteroid.png","asteroid1.png","asteroid2.png","asteroid3.png"].forEach(src => {
         const img = new Image();
-        img.src = "" + src;
+        img.src = src;
         asteroidImages.push(img);
     });
 
