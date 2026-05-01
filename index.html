@@ -8,10 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="game.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/index.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/game.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/contact.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/about.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/how2play.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/shared.css">
 </head>
 
 <body>
@@ -36,20 +38,20 @@
                 <source src="../WebPictures/bg-music.mp3" type="audio/mpeg">
             </audio>
         </div>
-    
-    <!-- Mobile hamburger -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
-</header>
 
-<!-- Mobile nav drawer (outside header) -->
-<nav class="mobile-nav-drawer" id="mobileNavDrawer">
-    <a href="index.html">Home</a>
-    <a href="contact.html">Contact Us</a>
-    <a href="about.html">About Us</a>
-    <a href="how2play.html">How to play</a>
-</nav>
+        <!-- Mobile hamburger -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <!-- Mobile nav drawer (outside header) -->
+    <nav class="mobile-nav-drawer" id="mobileNavDrawer">
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="about.html">About Us</a>
+        <a href="how2play.html">How to play</a>
+    </nav>
 
     <!-- REDESIGNED hero section -->
     <section class="hero">
@@ -116,53 +118,54 @@
 
     <!-- Shared header: scroll-shrink + active nav link -->
     <script>
-    (function() {
-        // Scroll shrink
-        window.addEventListener("scroll", function() {
-            document.querySelector("header").classList.toggle("scrolled", window.scrollY > 40);
-        }, { passive: true });
+        (function () {
+            // Scroll shrink
+            window.addEventListener("scroll", function () {
+                document.querySelector("header").classList.toggle("scrolled", window.scrollY > 40);
+            }, { passive: true });
 
-        // Mark current page link as active
-        var links = document.querySelectorAll("header .nav-links a");
-        var page  = location.pathname.split("/").pop() || "index.html";
-        links.forEach(function(a) {
-            if (a.getAttribute("href") === page) a.classList.add("active");
-        });
+            // Mark current page link as active
+            var links = document.querySelectorAll("header .nav-links a");
+            var page = location.pathname.split("/").pop() || "index.html";
+            links.forEach(function (a) {
+                if (a.getAttribute("href") === page) a.classList.add("active");
+            });
 
-        // Sync music-btn class with bgMusic element
-        var bgMusic = document.getElementById("bgMusic");
-        var musicBtn = document.querySelector("header .music-btn");
-        if (bgMusic && musicBtn) {
-            bgMusic.addEventListener("play",  function(){ musicBtn.classList.add("music-playing"); });
-            bgMusic.addEventListener("pause", function(){ musicBtn.classList.remove("music-playing"); });
-        }
-    })();
+            // Sync music-btn class with bgMusic element
+            var bgMusic = document.getElementById("bgMusic");
+            var musicBtn = document.querySelector("header .music-btn");
+            if (bgMusic && musicBtn) {
+                bgMusic.addEventListener("play", function () { musicBtn.classList.add("music-playing"); });
+                bgMusic.addEventListener("pause", function () { musicBtn.classList.remove("music-playing"); });
+            }
+        })();
     </script>
 
     <!-- Hamburger menu JS -->
     <script>
-    (function() {
-        var btn = document.getElementById('hamburgerBtn');
-        var drawer = document.getElementById('mobileNavDrawer');
-        if (!btn || !drawer) return;
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            var open = btn.classList.toggle('open');
-            drawer.classList.toggle('open', open);
-        });
-        document.addEventListener('click', function(e) {
-            if (!btn.contains(e.target) && !drawer.contains(e.target)) {
-                btn.classList.remove('open');
-                drawer.classList.remove('open');
-            }
-        });
-        // Mark active link
-        var links = drawer.querySelectorAll('a');
-        var page = location.pathname.split('/').pop() || 'index.html';
-        links.forEach(function(a) {
-            if (a.getAttribute('href') === page) a.classList.add('active');
-        });
-    })();
+        (function () {
+            var btn = document.getElementById('hamburgerBtn');
+            var drawer = document.getElementById('mobileNavDrawer');
+            if (!btn || !drawer) return;
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = btn.classList.toggle('open');
+                drawer.classList.toggle('open', open);
+            });
+            document.addEventListener('click', function (e) {
+                if (!btn.contains(e.target) && !drawer.contains(e.target)) {
+                    btn.classList.remove('open');
+                    drawer.classList.remove('open');
+                }
+            });
+            // Mark active link
+            var links = drawer.querySelectorAll('a');
+            var page = location.pathname.split('/').pop() || 'index.html';
+            links.forEach(function (a) {
+                if (a.getAttribute('href') === page) a.classList.add('active');
+            });
+        })();
     </script>
 </body>
+
 </html>
