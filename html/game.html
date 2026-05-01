@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Space Ranger - Play</title>
+    <link rel="stylesheet" href="../css/game.css">
+    <link rel="stylesheet" href="../css/shared.css">
+</head>
+
+<body class="gamePage">
+    <audio id="bgMusic" src="../WebPictures/bg-music.mp3" loop></audio>
+
+    <!-- Background starfield -->
+    <canvas id="stars"></canvas>
+
+    <!-- Outer wrapper for scale centering -->
+    <div id="gameWrapper">
+        <div id="gameContainer">
+
+            <!-- HUD: wrapped for animated border -->
+            <div id="ui-wrapper">
+                <div id="ui">
+                    <span class="hud-label">Score</span>
+                    <span class="hud-value" id="score">0</span>
+                    <span class="hud-sep"></span>
+                    <span class="hud-label">Level</span>
+                    <span class="hud-value" id="level">1</span>
+                    <span class="hud-sep"></span>
+                    <span class="hud-label">Best</span>
+                    <span class="hud-value" id="highScore">0</span>
+                    <span class="hud-sep"></span>
+                    <span class="hud-label">Lives</span>
+                    <span id="lives"></span>
+                </div>
+            </div>
+
+            <!-- Control buttons: music, pause -->
+            <div class="game-controls">
+                <button id="musicToggle" class="ctrl-btn" type="button" title="Toggle music">🔇</button>
+                <button id="pauseBtn" class="ctrl-btn" type="button" title="Pause">
+                    <img src="../WebPictures/pause.png" alt="Pause">
+                </button>
+            </div>
+
+            <!-- Level up banner -->
+            <div id="levelBanner">⬡ LEVEL UP ⬡</div>
+
+            <!-- Overlay: Pause + Game Over -->
+            <div id="overlay">
+                <div id="pauseMenu">
+                    <h2>Paused</h2>
+                    <button class="heroBtn" onclick="resumeGame()"><span>Resume</span></button>
+                    <button class="heroBtn" onclick="restartGame()"><span>Restart</span></button>
+                    <button class="heroBtn btn-danger" onclick="quitToGameOver()"><span>Quit</span></button>
+                </div>
+
+                <div id="gameOver" style="display: none;">
+                    <h1>Game Over</h1>
+                    <div id="newBestLabel">✦ New Best ✦</div>
+                    <p>Final Score<br><span id="finalScore">0</span></p>
+                    <button class="heroBtn" onclick="restartGame()"><span>Play Again</span></button>
+                    <button class="heroBtn btn-secondary" onclick="location.href='index.html'"><span>Home</span></button>
+                </div>
+            </div>
+
+            <!-- Game canvas -->
+            <canvas id="gameCanvas"></canvas>
+
+        </div><!-- /gameContainer -->
+    </div><!-- /gameWrapper -->
+
+    <!-- Mobile on-screen controls (outside scaled container so touch targets are correct) -->
+    <div id="mobileControls">
+        <div class="mobile-dpad">
+            <button class="mobile-btn" id="btnLeft">&#9664;</button>
+            <button class="mobile-btn" id="btnRight">&#9654;</button>
+        </div>
+        <button class="mobile-btn mobile-fire-btn" id="btnFire">&#128293;</button>
+    </div>
+
+    <script src="../js/game.js"></script>
+
+    <script>
+        (function () {
+            window.addEventListener("scroll", function () {
+                var h = document.querySelector("header");
+                if (h) h.classList.toggle("scrolled", window.scrollY > 40);
+            }, { passive: true });
+            var links = document.querySelectorAll("header .nav-links a");
+            var page = location.pathname.split("/").pop() || "index.html";
+            links.forEach(function (a) {
+                if (a.getAttribute("href") === page) a.classList.add("active");
+            });
+        })();
+    </script>
+
+    <!-- Hamburger menu JS -->
+    <script>
+    (function() {
+        var btn = document.getElementById('hamburgerBtn');
+        var drawer = document.getElementById('mobileNavDrawer');
+        if (!btn || !drawer) return;
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var open = btn.classList.toggle('open');
+            drawer.classList.toggle('open', open);
+        });
+        document.addEventListener('click', function(e) {
+            if (!btn.contains(e.target) && !drawer.contains(e.target)) {
+                btn.classList.remove('open');
+                drawer.classList.remove('open');
+            }
+        });
+        // Mark active link
+        var links = drawer.querySelectorAll('a');
+        var page = location.pathname.split('/').pop() || 'index.html';
+        links.forEach(function(a) {
+            if (a.getAttribute('href') === page) a.classList.add('active');
+        });
+    })();
+    </script>
+</body>
+
+</html>
