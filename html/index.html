@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>How To Play - Space Ranger</title>
+    <title>Space Ranger</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/game.css">
-    <link rel="stylesheet" href="../css/how2play.css">
-    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/game.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/index.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/contact.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/shared.css">
 </head>
 
 <body>
 
+    <!-- ORIGINAL star canvas — untouched -->
     <canvas id="stars"></canvas>
 
     <!-- ORIGINAL header — untouched -->
     <header>
         <div class="logo">SPACE RANGER</div>
+
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="contact.html">Contact Us</a>
             <a href="about.html">About Us</a>
             <a href="how2play.html">How to play</a>
         </nav>
+
         <div class="music-controls">
             <button id="musicToggle" class="music-btn">🔇</button>
             <audio id="bgMusic" loop>
@@ -47,88 +51,69 @@
     <a href="how2play.html">How to play</a>
 </nav>
 
-    <!-- REDESIGNED content -->
+    <!-- REDESIGNED hero section -->
+    <section class="hero">
 
-    <section class="howHero">
-        <p class="page-eyebrow">— PILOT MANUAL —</p>
-        <h1 class="howTitle">How To <span class="howTitle--accent">Play</span></h1>
-        <p class="howSubtitle">Learn the controls and master the asteroid field. Survive long enough to become a legend.</p>
-    </section>
-
-    <!-- CONTROLS — new section -->
-    <section class="controlsSection">
-        <h2 class="sectionTitle">Controls</h2>
-
-        <div class="controlsGrid">
-            <div class="controlCard">
-                <div class="controlCard__key">← →</div>
-                <div class="controlCard__desc">Move ship left / right</div>
-            </div>
-            <div class="controlCard">
-                <div class="controlCard__key">A D</div>
-                <div class="controlCard__desc">Alternative movement keys</div>
-            </div>
-            <div class="controlCard">
-                <div class="controlCard__key">SPACE</div>
-                <div class="controlCard__desc">Fire bullets</div>
-            </div>
-            <div class="controlCard">
-                <div class="controlCard__key">MOUSE</div>
-                <div class="controlCard__desc">Aim &amp; shoot (hold click)</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GAME DEVELOPMENT -->
-    <section class="historySection">
-        <h2 class="sectionTitle">Game Development</h2>
-
-        <div class="historyItem">
-            <div class="historyItem__num">01</div>
-            <div class="historyItem__body">
-                <h3>The First Prototype</h3>
-                <p>Space Ranger began as a small university project designed to explore the
-                capabilities of HTML5 Canvas and JavaScript game mechanics.
-                The earliest version featured a simple spaceship that could move
-                left and right while shooting basic enemies.</p>
-            </div>
+        <!-- Ship display with rings -->
+        <div class="ship-container">
+            <div class="ship-ring ship-ring--outer"></div>
+            <div class="ship-ring ship-ring--mid"></div>
+            <div class="ship-ring ship-ring--inner"></div>
+            <div class="ship-glow"></div>
+            <img src="../WebPictures/shooter.png" class="ship-img" alt="Space Ranger ship">
         </div>
 
-        <div class="historyItem">
-            <div class="historyItem__num">02</div>
-            <div class="historyItem__body">
-                <h3>Gameplay Improvements</h3>
-                <p>As development continued, more features were added including enemy
-                asteroid spawning, collision detection, score tracking,
-                and increasing difficulty levels to challenge players.</p>
-            </div>
+        <!-- Title -->
+        <div class="title-block">
+            <p class="title-eyebrow">— MISSION BRIEFING —</p>
+            <h1 class="heroTitle">SPACE RANGER</h1>
+            <p class="title-sub">DEFEND THE GALAXY. SURVIVE THE VOID.</p>
         </div>
 
-        <div class="historyItem">
-            <div class="historyItem__num">03</div>
-            <div class="historyItem__body">
-                <h3>Visual Upgrades</h3>
-                <p>The game evolved visually with parallax star backgrounds,
-                glowing user interfaces, particle explosion effects,
-                and smooth animations to create a more immersive arcade experience.</p>
-            </div>
+        <!-- Buttons -->
+        <div class="btn-group">
+            <button onclick="location.href='game.html'" class="heroBtn heroBtn--primary">
+                <span class="heroBtn__shimmer"></span>
+                <span class="heroBtn__label">▶&nbsp;&nbsp;LAUNCH MISSION</span>
+            </button>
+
+            <button onclick="location.href='how2play.html'" class="heroBtn heroBtn--secondary">
+                <span class="heroBtn__shimmer"></span>
+                <span class="heroBtn__label">?&nbsp;&nbsp;HOW TO PLAY</span>
+            </button>
         </div>
 
-        <div class="historyItem">
-            <div class="historyItem__num">04</div>
-            <div class="historyItem__body">
-                <h3>Modern Features</h3>
-                <p>Later updates introduced mouse controls, smoother shooting mechanics,
-                improved enemy behavior, and a local high score system
-                that encourages players to beat their previous records.</p>
+        <!-- Stats strip -->
+        <div class="stats-strip">
+            <div class="stat">
+                <span class="stat__label">HIGH SCORE</span>
+                <span class="stat__value" id="hsDisplay">—</span>
+            </div>
+            <div class="stat-divider">//</div>
+            <div class="stat">
+                <span class="stat__label">STATUS</span>
+                <span class="stat__value stat__value--online">● ONLINE</span>
+            </div>
+            <div class="stat-divider">//</div>
+            <div class="stat">
+                <span class="stat__label">SECTOR</span>
+                <span class="stat__value">ALPHA-7</span>
             </div>
         </div>
 
     </section>
 
-    <footer>© 2026 Space Ranger | All Rights Reserved</footer>
+    <footer>
+        © 2026 Space Ranger | All Rights Reserved
+    </footer>
 
-    <script src="../js/game.js"></script>
+    <script src="../Web_Technologies_SpaceRanger_40804620/game.js"></script>
+    <script>
+        const hs = localStorage.getItem('highScore');
+        const el = document.getElementById('hsDisplay');
+        if (el && hs && parseInt(hs) > 0) el.textContent = parseInt(hs).toLocaleString();
+    </script>
+
     <!-- Shared header: scroll-shrink + active nav link -->
     <script>
     (function() {
@@ -180,5 +165,4 @@
     })();
     </script>
 </body>
-
 </html>

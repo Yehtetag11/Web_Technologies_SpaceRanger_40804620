@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Contact Us - Space Ranger</title>
+    <title>About Us - Space Ranger</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/game.css">
-    <link rel="stylesheet" href="../css/contact.css">
-    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/game.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/about.css">
+    <link rel="stylesheet" href="../Web_Technologies_SpaceRanger_40804620/shared.css">
 </head>
 
 <body>
@@ -48,49 +48,57 @@
 </nav>
 
     <!-- REDESIGNED content -->
-    <section class="contactHero">
+    <section class="aboutHero">
+        <p class="page-eyebrow">— CAPTAIN'S LOG —</p>
+        <h1 class="aboutTitle">Our Journey<br><span class="aboutTitle--accent">Through Space</span></h1>
+        <p class="aboutSubtitle">From a simple university project to a fully interactive arcade experience.</p>
+    </section>
 
-        <p class="page-eyebrow">— OPEN CHANNEL —</p>
-        <h1 class="contactTitle">Contact <span class="contactTitle--accent">Us</span></h1>
+    <section class="timeline">
 
-        <div class="centerPhoto">
-            <div class="centerPhoto__overlay"></div>
-            <img src="../WebPictures/office.jpg" alt="Our Office">
-            <div class="centerPhoto__label">HQ // YANGON, MYANMAR</div>
+        <div class="timelineItem">
+            <div class="timelineItem__icon">🚀</div>
+            <div class="timelineItem__body">
+                <h2>The Beginning</h2>
+                <p>Space Shooter started as a small academic project built using HTML, CSS, and JavaScript.
+                The goal was simple: create a playable 2D shooting game inside the browser.</p>
+            </div>
         </div>
 
-        <div class="contactInfo">
-            <p class="contactDescription">
-                Have questions about SPACE RANGER? Want to report a bug or give feedback?<br>
-                We'd love to hear from you. Reach out using the information below.
-            </p>
+        <div class="timelineItem">
+            <div class="timelineItem__icon">🌌</div>
+            <div class="timelineItem__body">
+                <h2>Visual Evolution</h2>
+                <p>We introduced parallax star backgrounds, glowing UI elements,
+                animated spaceship effects, and modern glass-style interfaces
+                to enhance the immersive experience.</p>
+            </div>
+        </div>
 
-            <div class="infoGrid">
+        <div class="timelineItem">
+            <div class="timelineItem__icon">💥</div>
+            <div class="timelineItem__body">
+                <h2>Gameplay Upgrade</h2>
+                <p>The game evolved with particle explosions, rotating asteroid enemies,
+                level scaling difficulty, and smooth mouse + keyboard controls.</p>
+            </div>
+        </div>
 
-                <div class="infoItem">
-                    <div class="infoItem__icon">📍</div>
-                    <div class="infoItem__body">
-                        <span class="infoItem__label">ADDRESS</span>
-                        <span class="infoItem__value">No.43, Pyay Road<br>Yangon, Myanmar</span>
-                    </div>
-                </div>
+        <div class="timelineItem">
+            <div class="timelineItem__icon">🏆</div>
+            <div class="timelineItem__body">
+                <h2>Competitive Spirit</h2>
+                <p>A high score system was added using local storage,
+                encouraging players to improve and beat their previous records.</p>
+            </div>
+        </div>
 
-                <div class="infoItem">
-                    <div class="infoItem__icon">📧</div>
-                    <div class="infoItem__body">
-                        <span class="infoItem__label">EMAIL</span>
-                        <span class="infoItem__value">spaceranger@gmail.com</span>
-                    </div>
-                </div>
-
-                <div class="infoItem">
-                    <div class="infoItem__icon">📞</div>
-                    <div class="infoItem__body">
-                        <span class="infoItem__label">PHONE</span>
-                        <span class="infoItem__value">+95 9 123 456 789</span>
-                    </div>
-                </div>
-
+        <div class="timelineItem timelineItem--future">
+            <div class="timelineItem__icon">✨</div>
+            <div class="timelineItem__body">
+                <h2>The Future</h2>
+                <p>Upcoming updates may include boss battles, power-ups,
+                global leaderboards, and advanced AI enemies.</p>
             </div>
         </div>
 
@@ -98,7 +106,7 @@
 
     <footer>© 2026 Space Ranger | All Rights Reserved</footer>
 
-    <script src="../js/game.js"></script>
+    <script src="../Web_Technologies_SpaceRanger_40804620/game.js"></script>
     <!-- Shared header: scroll-shrink + active nav link -->
     <script>
     (function() {
