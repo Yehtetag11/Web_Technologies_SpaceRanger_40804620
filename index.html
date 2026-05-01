@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://yehtetag11.github.io/Web_Technologies_SpaceRanger_40804620/game.css">
-    <link rel="stylesheet" href="https://yehtetag11.github.io/Web_Technologies_SpaceRanger_40804620/index.css">
-    <link rel="stylesheet" href="https://yehtetag11.github.io/Web_Technologies_SpaceRanger_40804620/contact.css">
-    <link rel="stylesheet" href="https://yehtetag11.github.io/Web_Technologies_SpaceRanger_40804620/shared.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="shared.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
         <div class="music-controls">
             <button id="musicToggle" class="music-btn">🔇</button>
             <audio id="bgMusic" loop>
-                <source src="../WebPictures/bg-music.mp3" type="audio/mpeg">
+                <source src="bg-music.mp3" type="audio/mpeg">
             </audio>
         </div>
     
@@ -60,7 +60,7 @@
             <div class="ship-ring ship-ring--mid"></div>
             <div class="ship-ring ship-ring--inner"></div>
             <div class="ship-glow"></div>
-            <img src="../WebPictures/shooter.png" class="ship-img" alt="Space Ranger ship">
+            <img src="shooter.png" class="ship-img" alt="Space Ranger ship">
         </div>
 
         <!-- Title -->
@@ -107,7 +107,7 @@
         © 2026 Space Ranger | All Rights Reserved
     </footer>
 
-    <script src="https://yehtetag11.github.io/Web_Technologies_SpaceRanger_40804620/game.js"></script>
+    <script src="game.js"></script>
     <script>
         const hs = localStorage.getItem('highScore');
         const el = document.getElementById('hsDisplay');

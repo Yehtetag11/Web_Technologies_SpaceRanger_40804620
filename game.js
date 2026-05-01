@@ -395,12 +395,12 @@ if (canvas) {
 
     /* ---- Assets ---- */
     const playerImg = new Image();
-    playerImg.src = "../WebPictures/shooter.png";
+    playerImg.src = "shooter.png";
 
     const asteroidImages = [];
     ["asteroid.png","asteroid1.png","asteroid2.png","asteroid3.png"].forEach(src => {
         const img = new Image();
-        img.src = "../WebPictures/" + src;
+        img.src = "" + src;
         asteroidImages.push(img);
     });
 
@@ -642,7 +642,7 @@ if (canvas) {
         container.innerHTML = "";
         for (let i = 0; i < lives; i++) {
             const img = document.createElement("img");
-            img.src = "../WebPictures/live.png";
+            img.src = "live.png";
             img.style.width = "20px";
             container.appendChild(img);
         }
